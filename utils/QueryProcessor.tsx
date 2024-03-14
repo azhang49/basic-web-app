@@ -28,8 +28,13 @@ export default function QueryProcessor(query: string): string {
 
   if (query.toLowerCase().includes("plus")) {
     const arr = query.split(" ");
-    const res = parseInt(arr[2]) + parseInt(arr[4]);
-    return res.toString();
+    if (arr.length == 5) {
+        const res = parseInt(arr[2]) + parseInt(arr[4]);
+        return res.toString();
+    } else {
+        const res = parseInt(arr[2]) + parseInt(arr[4]) + parseInt(arr[6])
+        return res.toString();
+    }
   }
 
   if (query.toLowerCase().includes("multiplied")) {

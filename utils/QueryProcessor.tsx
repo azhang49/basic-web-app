@@ -67,5 +67,11 @@ export default function QueryProcessor(query: string): string {
     return res.toString();
   }
 
+  if (query.toLowerCase().includes("power")) {
+    const arr = query.split(" ");
+    const res = parseInt(arr[2]) ** parseInt(arr[7]);
+    return res.toString();
+  }
+
   return "";
 }

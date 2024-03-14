@@ -38,5 +38,23 @@ export default function QueryProcessor(query: string): string {
     return res.toString();
   }
 
+  if (query.toLowerCase().includes("square") && query.toLowerCase().includes("cube")) {
+    const arr = query.split(" ");
+    const num1 = arr[12].split(",")[0];
+    const num2 = arr[13].split(",")[0];
+    const num3 = arr[14].split(",")[0];
+    const num4 = arr[15].split(",")[0];
+    const num5 = arr[16].split(",")[0];
+    const num6 = arr[17].split(",")[0];
+    const num7 = arr[18].split("?")[0];
+
+    const arr2 = [num1, num2, num3, num4, num5, num6, num7];
+    for (let i = 0; i < 7; i++) {
+        if (Number.isInteger(Math.sqrt(parseInt(arr2[i]))) && Number.isInteger(Math.cbrt(parseInt(arr2[i])))) {
+            return arr2[i];
+        }
+    }
+  }
+
   return "";
 }

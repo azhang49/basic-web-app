@@ -17,5 +17,15 @@ export default function QueryProcessor(query: string): string {
     return ("azhang");
   }
 
+  if (query.toLowerCase().includes("largest")) {
+
+  }
+
+  if (query.toLowerCase().includes("plus")) {
+    const arr = query.split(" ");
+    const res = parseInt(arr[2]) + parseInt(arr[4]);
+    return res.toString();
+  }
+
   return "";
 }

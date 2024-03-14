@@ -18,7 +18,12 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("largest")) {
-
+    const arr = query.split(", ");
+    const num1 = arr[0].split(": ")[1];
+    const num2 = arr[1];
+    const num3 = arr[2].split("?")[0];
+    const res = Math.max(Math.max(parseInt(num1), parseInt(num2)), parseInt(num3));
+    return res.toString();
   }
 
   if (query.toLowerCase().includes("plus")) {

@@ -61,5 +61,11 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  if (query.toLowerCase().includes("minus")) {
+    const arr = query.split(" ");
+    const res = parseInt(arr[2]) - parseInt(arr[4]);
+    return res.toString();
+  }
+
   return "";
 }

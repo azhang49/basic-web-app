@@ -32,5 +32,11 @@ export default function QueryProcessor(query: string): string {
     return res.toString();
   }
 
+  if (query.toLowerCase().includes("multiplied")) {
+    const arr = query.split(" ");
+    const res = parseInt(arr[2]) * parseInt(arr[5]);
+    return res.toString();
+  }
+
   return "";
 }
